@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/insuranceMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F6FC"
+    android:padding="12dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#183B70"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INSURETRACK"
+            android:textColor="#BFD4FF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12" />
+
+        <TextView
+            android:id="@+id/txtInsuranceTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Vehicle Insurance Tracker"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Manage your vehicle insurance details."
+            android:textColor="#E0E9FA"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- Insurance Form -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Insurance Details"
+            android:textColor="#142B4A"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <!-- Vehicle Number -->
+        <EditText
+            android:id="@+id/vehicleNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            android:hint="Vehicle Number (e.g. KL 35 AB 1234)"
+            android:inputType="textCapCharacters"
+            android:singleLine="true"
+            android:textColor="#142B4A"
+            android:textColorHint="#8A96A8"
+            android:textSize="14sp"
+            android:backgroundTint="#2459D3" />
+
+        <!-- Owner Name -->
+        <EditText
+            android:id="@+id/ownerName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            android:hint="Owner Name"
+            android:inputType="textPersonName|textCapWords"
+            android:singleLine="true"
+            android:textColor="#142B4A"
+            android:textColorHint="#8A96A8"
+            android:textSize="14sp"
+            android:backgroundTint="#2459D3" />
+
+        <!-- Insurance Company -->
+        <EditText
+            android:id="@+id/insuranceCompany"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            android:hint="Insurance Company"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:textColor="#142B4A"
+            android:textColorHint="#8A96A8"
+            android:textSize="14sp"
+            android:backgroundTint="#2459D3" />
+
+        <!-- Policy Number -->
+        <EditText
+            android:id="@+id/policyNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            android:hint="Policy Number"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="#142B4A"
+            android:textColorHint="#8A96A8"
+            android:textSize="14sp"
+            android:backgroundTint="#2459D3" />
+
+        <!-- Expiry Date -->
+        <EditText
+            android:id="@+id/expiryDate"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            android:hint="Expiry Date (DD-MM-YYYY)"
+            android:inputType="date"
+            android:singleLine="true"
+            android:textColor="#142B4A"
+            android:textColorHint="#8A96A8"
+            android:textSize="14sp"
+            android:backgroundTint="#2459D3" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnAddInsurance"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#2459D3"
+            android:onClick="insert"
+            android:text="SAVE INSURANCE DETAILS"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <!-- View Records Button -->
+        <Button
+            android:id="@+id/btnShowInsurance"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#E8EEFF"
+            android:onClick="show"
+            android:text="VIEW SAVED RECORDS"
+            android:textAllCaps="false"
+            android:textColor="#2459D3"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Saved Records -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/txtRecordsHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saved Insurance Records"
+            android:textColor="#142B4A"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtInsuranceRecords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="#F3F6FC"
+            android:padding="8dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Your saved insurance details will appear here."
+            android:textColor="#42536B"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="VEHICLE INSURANCE TRACKER"
+        android:textColor="#8995A7"
+        android:textSize="9sp"
+        android:letterSpacing="0.08" />
+
+</LinearLayout>
